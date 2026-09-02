@@ -7,7 +7,6 @@ inventory.append("coffee")
 inventory.remove("paper")
 
 print(len(inventory))
-print(inventory)
 
 for item in inventory:
-    print(inventory)
+    print(item)
