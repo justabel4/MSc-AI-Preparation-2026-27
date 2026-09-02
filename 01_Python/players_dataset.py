@@ -49,15 +49,18 @@ for item in players:
 
 def add_score(players):
    total_score = 0
-   for player in players:
-      total_score += player["score"]
-      return total_score
+
+    for player in players:
+        total_score += player["score"]
+
+    return total_score
 
 total_score = add_score(players)
 print("total score:", total_score)
 
-def avg_score(players):
+def avg_score(total_score, players):
    average = total_score / len(players)
+   return average
 
 average = avg_score(players)
 print("average score:", average)
