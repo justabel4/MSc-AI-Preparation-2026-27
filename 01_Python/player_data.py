@@ -16,7 +16,9 @@ for item in player["inventory"]:
 player["inventory"].append("mug")
 player["inventory"].remove("phone")
 
+print("updated inventory:")
+
 for item in player["inventory"]:
     print(item)
 
-print(len(player["inventory"]))
+print("number of items:", len(player["inventory"]))
