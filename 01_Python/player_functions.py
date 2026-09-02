@@ -20,8 +20,8 @@ def calculate_xp_needed(current_xp, xp_required):
 
 show_player()
 
-new_score = add_score(2400,129)
-xp_remain = calculate_xp_needed(1000,320)
+new_score = add_score(score,point_earned)
+xp_remain = calculate_xp_needed(current_xp,xp_required)
 
 print("new score:", new_score)
 print("xp remaining:", xp_remain)
