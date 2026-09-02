@@ -16,6 +16,6 @@ print("health after damage", player["health"])
 player["score"] += 500
 print("new score", player["score"])
 
-player["weapon"] = "riffle"
+player["weapon"] = "rifle"
 print(player["weapon"])
 print(player)
