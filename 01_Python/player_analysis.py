@@ -32,13 +32,13 @@ players = [
 ]
 
 for item in players:
-    print("player name and score:", item["name"], item["score"])
-
-for score in players:
-    if score["score"] >= 1500:
-        print("high scorer", score["name"])
+    
+    if item["score"] >= 1500:
+        print(item["name"], item["score"])
+        print("high scorer")
     else:
-        print("regular scorer", score["name"])
+        print(item["name"], item["score"])
+        print("regular scorer")
 
 def count_level_player(players):
     advanced_player=0 
