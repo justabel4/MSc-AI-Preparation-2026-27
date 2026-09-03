@@ -1,12 +1,10 @@
-valid_input = True
-
-while valid_input == True:
+while True:
 
     try:
         score = int(input("enter score: "))
 
         if score < 0:
-                print("score cannot be neagtive")
+                print("score cannot be negative")
         else:
              print("score:", score)
              break
