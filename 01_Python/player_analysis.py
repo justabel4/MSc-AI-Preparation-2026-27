@@ -44,7 +44,7 @@ def count_level_player(players):
     advanced_player=0 
 
     for count in players:
-        if count["level"] >= len(players):
+        if count["level"] >= 5:
             advanced_player += 1
 
     return advanced_player
