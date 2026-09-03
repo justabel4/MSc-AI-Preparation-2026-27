@@ -5,5 +5,5 @@ while valid_input == False:
         level = int(input("enter level:"))
         print("level:", level)
         valid_input = True
-    except:
+    except ValueError:
         print("invalid number, try again")
