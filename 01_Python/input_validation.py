@@ -8,5 +8,5 @@ try:
     print ("score:", score)
     
 except ValueError:
-    print("please enter a number")
+    print("invalid number entered")
 
