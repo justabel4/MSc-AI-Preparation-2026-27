@@ -5,5 +5,5 @@ while player_health > 0:
     print("health:", player_health)
     player_health -= enemy_damage 
 
-    if player_health == 0:
-        print("player defeated")
+    
+print("player defeated")
