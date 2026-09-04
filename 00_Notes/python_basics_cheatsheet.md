@@ -386,6 +386,287 @@ print/use result
 
 ---
 
+## 16. Lists
+
+Lists store multiple values in order.
+
+```python
+inventory = ["key", "phone", "wallet"]
+```
+
+Access items with an index:
+
+```python
+print(inventory[0])
+print(inventory[-1])
+```
+
+Useful list operations:
+
+```python
+inventory.append("mug")
+inventory.remove("phone")
+print(len(inventory))
+```
+
+---
+
+## 17. `for` loops
+
+A `for` loop repeats code for each item in a collection.
+
+```python
+for item in inventory:
+    print(item)
+```
+
+---
+
+## 18. Dictionaries
+
+Dictionaries store values using keys.
+
+```python
+player = {
+    "name": "Alex",
+    "level": 5,
+    "score": 1200
+}
+```
+
+Access and update values:
+
+```python
+print(player["name"])
+player["score"] += 500
+player["weapon"] = "rifle"
+```
+
+A dictionary can contain a list:
+
+```python
+player = {
+    "name": "Alex",
+    "inventory": ["key", "wallet"]
+}
+
+player["inventory"].append("mug")
+```
+
+---
+
+## 19. Lists of dictionaries
+
+A dataset can be represented as a list containing dictionaries.
+
+```python
+players = [
+    {"name": "Alex", "score": 1200},
+    {"name": "Sam", "score": 1800}
+]
+```
+
+Loop through the records:
+
+```python
+for player in players:
+    print(player["name"], player["score"])
+```
+
+---
+
+## 20. Conditions: `if / elif / else`
+
+Conditions control which code runs.
+
+```python
+if score >= 1500:
+    print("High scorer")
+elif score >= 1000:
+    print("Medium scorer")
+else:
+    print("Low scorer")
+```
+
+Common comparison operators:
+
+```text
+==   equal to
+!=   not equal to
+>    greater than
+>=   greater than or equal to
+<    less than
+<=   less than or equal to
+```
+
+---
+
+## 21. Boolean values
+
+A Boolean is either:
+
+```python
+True
+False
+```
+
+Example:
+
+```python
+valid_input = False
+```
+
+---
+
+## 22. `while` loops
+
+A `while` loop repeats while its condition is true.
+
+```python
+health = 100
+
+while health > 0:
+    print(health)
+    health -= 20
+```
+
+The condition must eventually become false unless the loop is intentionally stopped with `break`.
+
+---
+
+## 23. `input()` and type conversion
+
+`input()` reads text from the user.
+
+```python
+name = input("Enter player name: ")
+```
+
+`input()` returns a string. Convert numeric input when needed:
+
+```python
+level = int(input("Enter level: "))
+score = int(input("Enter score: "))
+```
+
+---
+
+## 24. `try / except`
+
+Use `try / except` to handle errors without crashing the program.
+
+```python
+try:
+    score = int(input("Enter score: "))
+except ValueError:
+    print("Invalid number")
+```
+
+`ValueError` is raised when a conversion such as `int("hello")` cannot be completed.
+
+Prefer catching the specific error:
+
+```python
+except ValueError:
+```
+
+rather than a broad:
+
+```python
+except:
+```
+
+---
+
+## 25. `break`
+
+`break` immediately exits the current loop.
+
+```python
+while True:
+    score = int(input("Enter score: "))
+
+    if score >= 0:
+        break
+```
+
+`while True:` creates a loop that continues until something explicitly stops it.
+
+---
+
+## 26. `continue`
+
+`continue` skips the rest of the current loop iteration and moves to the next one.
+
+```python
+scores = [1200, -50, 1800]
+
+for score in scores:
+    if score < 0:
+        continue
+
+    print(score)
+```
+
+---
+
+## 27. List comprehensions
+
+A list comprehension creates a list in a compact form.
+
+Normal loop:
+
+```python
+valid_scores = []
+
+for score in scores:
+    if score >= 0:
+        valid_scores.append(score)
+```
+
+List comprehension:
+
+```python
+valid_scores = [score for score in scores if score >= 0]
+```
+
+Transform values:
+
+```python
+doubled_scores = [score * 2 for score in valid_scores]
+```
+
+---
+
+## 28. Function + input validation pattern
+
+A function can repeatedly ask for input until it receives a valid value and then return it.
+
+```python
+def get_valid_score():
+    while True:
+        try:
+            score = int(input("Enter player score: "))
+
+            if score < 0:
+                print("Score cannot be negative")
+            else:
+                return score
+
+        except ValueError:
+            print("Invalid number, try again")
+```
+
+Call the function once and store the returned value:
+
+```python
+player_score = get_valid_score()
+```
+
+Avoid calling the function multiple times if it asks for input, because each call runs the function again.
+
+---
+
 ## Concepts covered so far
 
 - Variables
@@ -393,7 +674,6 @@ print/use result
 - Integers
 - Arithmetic
 - `print()`
-- `def`
 - Functions
 - Function calls
 - Parameters
@@ -403,21 +683,32 @@ print/use result
 - `import`
 - Comments
 - Indentation
+- Lists
+- `.append()`
+- `.remove()`
+- `len()`
+- `for` loops
+- Dictionaries
+- Nested lists and dictionaries
+- Lists of dictionaries
+- Counters and totals
+- `if / elif / else`
+- Comparison operators
+- Boolean values
+- `while` loops
+- `input()`
+- `int()`
+- `try / except ValueError`
+- `break`
+- `continue`
+- List comprehensions
+- Input validation inside functions
 
 ## Next concepts to add
 
-This file will be expanded as we learn new material, including:
-
-- Lists
-- Dictionaries
-- `for` loops
-- `while` loops
-- `if / elif / else`
-- Boolean values
-- Reading files
+- Reading and writing files
 - JSON
 - CSV
-- Classes
-- Error handling
 - NumPy
 - Pandas
+- Classes
