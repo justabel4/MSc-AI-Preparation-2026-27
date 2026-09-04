@@ -1,21 +1,23 @@
 def get_valid_score():
-    valid_input = False
-    while valid_input == False:
+   
+    while True:
         try:
             score = int(input("enter player score: "))
+            
             if score < 0 :
                 print("score cannot be negative")
             else:
-                print("score:", score)
-                valid_input = True
-                break
+                return score
+                
         except ValueError:
             print("invalid number, try again")
     
-    return score
+
     
 
 player_score = get_valid_score()
+
+print("score:", player_score)
 
 if player_score >= 1500 :
     print("high scorer")
