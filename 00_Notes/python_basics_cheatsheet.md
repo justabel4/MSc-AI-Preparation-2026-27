@@ -726,6 +726,59 @@ A newline is written with:
 Important: `print()` can receive several values, but `file.write()` expects one string.
 
 
+
+---
+
+## 31. JSON
+
+JSON is a text format used to store structured data.
+
+Python's built-in `json` module can convert between Python data structures and JSON files.
+
+Import it with:
+
+```python
+import json
+```
+
+Save a Python dictionary to a JSON file:
+
+```python
+with open("player_data.json", "w") as file:
+    json.dump(player, file)
+```
+
+Load JSON data back into Python:
+
+```python
+with open("player_data.json", "r") as file:
+    loaded_player = json.load(file)
+```
+
+Typical flow:
+
+```text
+Python dictionary
+      ↓
+json.dump()
+      ↓
+JSON file
+      ↓
+json.load()
+      ↓
+Python dictionary
+```
+
+After loading, access the data like a normal dictionary:
+
+```python
+print(loaded_player["name"])
+
+for item in loaded_player["inventory"]:
+    print(item)
+```
+
+
 ## Concepts covered so far
 
 - Variables
@@ -768,6 +821,8 @@ Important: `print()` can receive several values, but `file.write()` expects one 
 - File modes `"w"` and `"r"`
 - `file.write()`
 - `file.read()`
+- `json.dump()`
+- `json.load()`
 
 ## Next concepts to add
 
