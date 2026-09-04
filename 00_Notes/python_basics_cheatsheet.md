@@ -667,6 +667,65 @@ Avoid calling the function multiple times if it asks for input, because each cal
 
 ---
 
+
+---
+
+## 29. f-strings
+
+f-strings let you insert variables directly into text.
+
+```python
+name = "Alex"
+score = 1800
+
+print(f"Player: {name}")
+print(f"Score: {score}")
+```
+
+They are especially useful when writing values to files because `file.write()` expects a string.
+
+```python
+file.write(f"Score: {score}\n")
+```
+
+---
+
+## 30. Reading and writing text files
+
+Use `open()` with `with` so Python closes the file automatically when the block ends.
+
+Write mode:
+
+```python
+with open("player_report.txt", "w") as file:
+    file.write("Player: Alex\n")
+```
+
+Read mode:
+
+```python
+with open("player_report.txt", "r") as file:
+    content = file.read()
+
+print(content)
+```
+
+Common modes:
+
+```text
+"w"   write
+"r"   read
+```
+
+A newline is written with:
+
+```python
+"\n"
+```
+
+Important: `print()` can receive several values, but `file.write()` expects one string.
+
+
 ## Concepts covered so far
 
 - Variables
@@ -703,10 +762,15 @@ Avoid calling the function multiple times if it asks for input, because each cal
 - `continue`
 - List comprehensions
 - Input validation inside functions
+- f-strings
+- Reading and writing text files
+- `with open(...)`
+- File modes `"w"` and `"r"`
+- `file.write()`
+- `file.read()`
 
 ## Next concepts to add
 
-- Reading and writing files
 - JSON
 - CSV
 - NumPy
